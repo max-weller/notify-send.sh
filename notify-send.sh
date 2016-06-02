@@ -182,6 +182,9 @@ while (( $# > 0 )) ; do
             if [[ -f "$filename" ]]; then
                 REPLACE_ID="$(< $filename)"
             fi
+            if [[ -z "$REPLACE_ID" ]]; then
+                REPLACE_ID="0"
+            fi
             STORE_ID="$filename"
             ;;
         -s|--close|--close=*)
